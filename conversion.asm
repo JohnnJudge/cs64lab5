@@ -12,14 +12,14 @@ conv:
     li $t2, 0
     li $t3, 3
 loop:
-	bge $t2, $t1, endloop
+	beq $t2, $t1, endloop
 	add $t0, $t0, $a0
 	add $t0, $t0, $a0
 	sub $t0, $t0, $a1
-	blt $t0, $t3, endif
+	blt $a0, $t3, endif
 	addi $a1, $a1, -1
-	addi $a0, $a0, 1
 endif:
+	addi $a0, $a0, 1
 	addi $t2, $t2, 1
 	j loop
 
